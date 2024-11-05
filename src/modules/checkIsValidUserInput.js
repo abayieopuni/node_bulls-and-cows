@@ -10,6 +10,28 @@
  */
 function checkIsValidUserInput(userInput) {
   /* Write your code here */
+  if (typeof userInput !== 'string' || userInput.length !== 4) {
+    return false;
+}
+
+
+const seenDigits = new Set();
+
+
+for (let character of userInput) {
+    
+    if (!/\d/.test(character)) {
+        return false;
+    }
+   
+    if (seenDigits.has(character)) {
+        return false;
+    }
+ 
+    seenDigits.add(character);
+}
+
+return true;
 }
 
 module.exports = {

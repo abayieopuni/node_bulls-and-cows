@@ -6,8 +6,15 @@
  *
  * @return {number} A random 4-digit number
  */
-function generateRandomNumber() {
+function generateRandomNumber(count) {
   /* Write your code here */
+  count = 5
+  const uniqueNumbers = new Set()
+  while(uniqueNumbers.size < count){
+    const randomNumber = Math.floor(Math.random()* 1)+ 100
+    uniqueNumbers.add(randomNumber);
+  }
+  return uniqueNumbers;
 }
 
 module.exports = {
